@@ -1,0 +1,11 @@
+.container {
+      width: 1200px;
+      height:612px;
+      background-image:url("login.jpg");
+      background-size: cover; /* or contain depending on what you want */
+      background-position: center center;
+      background-repeat: no-repeat;
+      text-align:center;
+      margin:auto;
+      padding:0;
+    }

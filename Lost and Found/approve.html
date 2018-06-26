@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content= "IE-edge">
+    <title>L&F | Lost and Found</title>
+    <link rel="icon" type="image/png" href="icon.png"/>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width-device-width, initial-scale-1">
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+    <script>
+        $(document).ready(function(){
+          $("#myInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#tbl_items_list th").not('thead tr').filter(function() {
+              $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+          });
+        });
+      </script> 
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">RECAP: Lost and Found</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li><a href="main.html">PENDING</a></li>
+            <li class="active"><a href="approve.html">APPROVED</a></li>
+            <li><a href="decline.html">DECLINED</a></li>
+            <li><a href="user.html">USERS</a></li>
+            
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"> Sign Up</a></li>
+            <li><button class="out" onclick="mainApp.logOut()"> Log Out</button></li>  
+          </ul>
+        </div>
+      </nav>
+
+<div id="wrapperHeader">
+      <div id="header">
+     <img src="header.jpg" style="width: 100%; height: 100%"/>
+      </div> 
+   </div>
+
+	<h1>APPROVED</h1>
+
+ <h3 class="bg-primary"><center>APPROVED SUBMISSIONS LIST</center></h3>
+ <br>
+ 
+ <div class="table-responsive">
+   <div class="col-lg-3 pull-right">
+  <input class="form-control" id="myInput" type="text" placeholder="Search..">
+   </div>
+ <table class="table" id="tbl_items_list" border="1">
+   <thead>
+    <tr>
+     <th>#ID</th>
+     <th>NAME</th>
+     <th>STATUS</th>
+     <th>POSTER</th>
+     <th>DATE SUBMITTED</th>
+    </tr>
+  </thead>
+   </table>
+  </div>
+
+
+
+
+
+  <footer>Copyright Lost and Found App  </footer>
+	<script src="js/fireBase.js"></script>
+  <script src="js/approve.js"></script>
+  
+	
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content= "IE-edge">
+	<title>L&F | Lost and Found</title>
+  <link rel="icon" type="image/png" href="icon.png"/>
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <link rel="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+	<meta name="viewport" content="width-device-width, initial-scale-1">
+  <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+  <script>
+    $(document).ready(function(){
+      $("#myInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#tbl_items_list tr").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
+    </script> 
+</head>
+<body>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand">RECAP: Lost and Found</a>
+              </div>
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="main.html">PENDING</a></li>
+                <li><a href="approve.html">APPROVED</a></li>
+                <li><a href="decline.html">DECLINED</a></li>
+                <li><a href="user.html">USERS</a></li>
+                <li><a href="claimed.html">CLAIMED ITEMS</a></li>
+                
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"> Sign Up</a></li>
+                <li><button class="out" onclick="mainApp.logOut()"> Log Out</button></li>  
+              </ul>
+            </div>
+          </nav>
+          <form>
+                
+            </form>
+            <input class="form-control" id="myInput" type="text" placeholder="Search..">
+            <br>
+            <table class="table table-striped table-bordered display" id="tbl_items_list" border="1" style="width:100%">
+             <thead>
+                 <tr >
+                     <th class="text-center">NAME</th>
+                     <th class="text-center">STATUS</th>
+                 </tr>
+             </thead>
+           </div>
+            </table>
+           
+           <footer>Copyright Lost and Found App  </footer>
+           
+               <script src="js/fireBase.js"></script>
+               <script src="js/main.js"></script>
+             
+             <script src="js/item_status.js"></script>
+             
+               
+           </body>
+           </html>
